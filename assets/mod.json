@@ -5,7 +5,7 @@
   "description": "remake ponchik on java",
   "version": "0",
   "main": "ponchik.Ponchik",
-  "minGameVersion": "136",
+  "minGameVersion": "137",
   "dependencies": [],
   "hidden": false,
   "java": true
