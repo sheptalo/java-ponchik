@@ -22,7 +22,8 @@ import mindustry.world.draw.*;
 import mindustry.world.meta.BuildVisibility;
 import ponchik.world.blocks.crafting.multicraft.IOEntry;
 import ponchik.world.blocks.crafting.multicraft.MultiCrafter;
-import ponchik.world.blocks.crafting.multicraft.Recipe; 
+import ponchik.world.blocks.crafting.multicraft.Recipe;
+
 
 public class PonchikBlocks{
 public static Block
@@ -37,7 +38,7 @@ public static void load()
 {
   //factory
   bigSeller = new MultiCrafter("Big seller"){{
-    requirements(Category.production, with(Items.copper, 400, Items.lead, 300, PonchikItems.ThoriumPlate, 200));
+    requirements(Category.production, with(Items.copper, 400, Items.lead, 300, PonchikItems.thoriumPlate, 200));
     size = 3;
     health = 800;
     powerCapacity = 0;
