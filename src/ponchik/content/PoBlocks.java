@@ -27,12 +27,10 @@ import ponchik.world.blocks.crafting.multicraft.Recipe;
 
 public class PoBlocks{
 public static Block
-//turret 
-asort, bit, light, lino, scar, pool, 
+//turret asort, bit, light, lino, scar, pool, 
 //factory
 bigSeller, seller, copperPress, electroPress, materialFactory, partsMaker, plateSeller,
-//units
-attackerFab, minerFab, minerRefab, unitBuy;
+//unitsattackerFab, minerFab, minerRefab, unitBuy;
 
 public static void load()
 {
