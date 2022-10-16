@@ -29,9 +29,9 @@ import ponchik.world.blocks.crafting.multicraft.Recipe;
 public class PonchikBlocks{
 public static 
 //turret 
-asort, bit, light, lino, scar, pool
+asort, bit, light, lino, scar, pool, 
 //factory
-bigSeller, seller, copperPress, electroPress, materialFactory, partsMaker, plateSeller
+bigSeller, seller, copperPress, electroPress, materialFactory, partsMaker, plateSeller,
 //units
 attackerFab, minerFab, minerRefab, unitBuy;
 
