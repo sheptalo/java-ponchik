@@ -1,7 +1,7 @@
 package ponchik.Ponchic;
 
 import mindustry.mod.Mod;
-
+import ponchik.content.*;
 public class Ponchik extends Mod{
 
     @Override
