@@ -27,7 +27,7 @@ import ol.world.blocks.crafting.multicraft.MultiCrafter;
 import ponchik.world.blocks.crafting.multicraft.Recipe; 
 
 public class PonchikBlocks{
-public static 
+public static Block
 //turret 
 asort, bit, light, lino, scar, pool, 
 //factory
