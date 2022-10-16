@@ -48,10 +48,9 @@ public static void load()
       new Recipe(
         new IOEntry(
           Seq.with(ItemStack.with(
-            Items.titanium, 2
+            Items.titanium, 2, 
             Items.silicon, 1
-            )
-          ),
+            )),
           Seq.with(), 1f),
           new IOEntry(
             Seq.with(ItemStack.with(
