@@ -1,4 +1,4 @@
-package ol.world.blocks.crafting.multicraft;
+package ponchik.world.blocks.crafting.multicraft;
 
 import arc.struct.ObjectSet;
 import arc.struct.Seq;

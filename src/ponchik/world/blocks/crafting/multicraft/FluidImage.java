@@ -1,4 +1,4 @@
-package ol.world.blocks.crafting.multicraft;
+package ponchik.world.blocks.crafting.multicraft;
 
 import arc.graphics.g2d.TextureRegion;
 import arc.math.Mathf;

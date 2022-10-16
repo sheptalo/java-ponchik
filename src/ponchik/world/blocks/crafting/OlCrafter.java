@@ -1,4 +1,4 @@
-package ol.world.blocks.crafting;
+package ponchik.world.blocks.crafting;
 
 import arc.Core;
 import arc.Events;

@@ -1,4 +1,4 @@
-package ol.world.blocks.crafting.multicraft;
+package ponchik.world.blocks.crafting.multicraft;
 
 import mindustry.type.LiquidStack;
 import mindustry.world.modules.LiquidModule;

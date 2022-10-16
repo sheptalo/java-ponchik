@@ -1,4 +1,4 @@
-package ol.world.blocks.crafting.multicraft;
+package ponchik.world.blocks.crafting.multicraft;
 
 public class RecipeAnalyzerException extends RuntimeException{
     public RecipeAnalyzerException() {
