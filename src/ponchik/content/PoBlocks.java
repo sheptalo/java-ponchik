@@ -25,7 +25,7 @@ import ponchik.world.blocks.crafting.multicraft.MultiCrafter;
 import ponchik.world.blocks.crafting.multicraft.Recipe;
 
 
-public class PonchikBlocks{
+public class PoBlocks{
 public static Block
 //turret 
 asort, bit, light, lino, scar, pool, 
@@ -38,7 +38,7 @@ public static void load()
 {
   //factory
   bigSeller = new MultiCrafter("Big seller"){{
-    requirements(Category.production, ItemStack.with(Items.copper, 400, Items.lead, 300, PonchikItems.thoriumPlate, 200));
+    requirements(Category.production, ItemStack.with(Items.copper, 400, Items.lead, 300, PoItems.thoriumPlate, 200));
     size = 3;
     health = 800;
     powerCapacity = 0;
@@ -54,7 +54,7 @@ public static void load()
           Seq.with(), 1f),
           new IOEntry(
             Seq.with(ItemStack.with(
-              PonchikItems.Coin, 2
+              PoItems.Coin, 2
               )),
               Seq.with()), 100f
         ));

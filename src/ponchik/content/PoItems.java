@@ -3,7 +3,7 @@ package ponchik.content;
 import arc.graphics.Color;
 import mindustry.type.Item;
 
-public class PonchikItems{
+public class PoItems{
 	public static Item 
 	Coin, copperPlate, leadPlate, mechGun, mechJet, thoriumPlate, titaniumPlate;
 	public static void load(){
