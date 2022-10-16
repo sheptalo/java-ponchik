@@ -22,7 +22,9 @@ import mindustry.world.blocks.production.*;
 import mindustry.world.blocks.storage.*;
 import mindustry.world.draw.*;
 import mindustry.world.meta.*;
-import ponchik.world.blocks.*;
+import ponchik.world.blocks.crafting.multicraft.IOEntry;
+import ol.world.blocks.crafting.multicraft.MultiCrafter;
+import ponchik.world.blocks.crafting.multicraft.Recipe; 
 
 public class PonchikBlocks{
 public static 
@@ -35,5 +37,27 @@ attackerFab, minerFab, minerRefab, unitBuy;
 
 public static void load()
 {
-  
+  //factory
+  bigSeller = new MutliCrafter("Big seller"){{
+    requirements(Category.production, with(Items.copper, 400, Items.lead, 300, PonchikItems.ThoriumPlate, 200));
+    size = 3;
+    health = 800;
+    powerCapacity = 0;
+    craftEffect = Fx.none;
+    itemCapacity = 20;
+    resolvedRecipes = Seq.with(
+      new Recipe(
+        new IOEntry(
+          Seq.with(ItemStack.with(
+            Items.titanium, 2
+            )
+          ),
+          Seq.with(), 1f),
+          new IOEntry(
+            Seq.with(ItemStack.with(
+              PonchikItems.coin, 2
+              )),
+              Seq.with()), 100f
+        ));
+  }};
 }
