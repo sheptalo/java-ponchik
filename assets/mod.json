@@ -1,11 +1,11 @@
 {
-  "name": "modtemplate",
-  "displayName": "Template",
-  "author": "[#8738ff[]]Sonnicon[[]]",
-  "description": "Gradle jar Mindustry mod template",
+  "name": "ponchik",
+  "displayName": "ponchik",
+  "author": "[#8738ff[]]sheptalo[[]]",
+  "description": "remake ponchik on java",
   "version": "0",
-  "main": "sonnicon.modtemplate.ModTemplate",
-  "minGameVersion": "105",
+  "main": "sheptalo.Ponchik",
+  "minGameVersion": "136",
   "dependencies": [],
   "hidden": false,
   "java": true
