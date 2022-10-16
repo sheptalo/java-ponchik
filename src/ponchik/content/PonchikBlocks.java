@@ -51,12 +51,15 @@ public static void load()
             Items.titanium, 2, 
             Items.silicon, 1
             )),
-          Seq.with(), 1f),
+          Seq.with(), 
+1f),
+
           new IOEntry(
             Seq.with(ItemStack.with(
               PonchikItems.Coin, 2
               )),
-              Seq.with()), 100f
+              Seq.with()), 
+100f
         ));
   }};
  }
