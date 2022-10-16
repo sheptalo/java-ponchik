@@ -10,5 +10,6 @@ public class Ponchik extends Mod{
 
     @Override
     public void loadContent(){
+      PonchikBlocks.load();
     }
 }
