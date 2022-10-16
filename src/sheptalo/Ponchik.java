@@ -1,4 +1,4 @@
-package sonnicon.modtemplate;
+package sheptalo.Ponchic;
 
 import mindustry.mod.Mod;
 
