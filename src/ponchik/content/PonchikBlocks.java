@@ -23,7 +23,7 @@ import mindustry.world.meta.BuildVisibility;
 import ponchik.world.blocks.crafting.multicraft.IOEntry;
 import ponchik.world.blocks.crafting.multicraft.MultiCrafter;
 import ponchik.world.blocks.crafting.multicraft.Recipe;
-
+import static mindustry.type.ItemStack.with;
 
 public class PonchikBlocks{
 public static Block
