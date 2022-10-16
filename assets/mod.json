@@ -4,7 +4,7 @@
   "author": "[#8738ff[]]sheptalo[[]]",
   "description": "remake ponchik on java",
   "version": "0",
-  "main": "sheptalo.Ponchik",
+  "main": "ponchik.Ponchik",
   "minGameVersion": "136",
   "dependencies": [],
   "hidden": false,
