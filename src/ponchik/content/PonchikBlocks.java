@@ -60,4 +60,5 @@ public static void load()
               Seq.with()), 100f
         ));
   }};
+ }
 }
