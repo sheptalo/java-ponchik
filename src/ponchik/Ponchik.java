@@ -1,4 +1,4 @@
-package sheptalo.Ponchic;
+package ponchik.Ponchic;
 
 import mindustry.mod.Mod;
 
