@@ -5,9 +5,10 @@ import mindustry.type.Item;
 
 public class PonchikItems{
 	public static Item 
-	coin, copperPlate, leadPlate, mechGun, mechJet, thoriumPlate, titaniumPlate;
+	Coin, copperPlate, leadPlate, mechGun, mechJet, thoriumPlate, titaniumPlate;
 	public static void load(){
-	  coin = new Item("Coin", Color.valueOf("abcdef")){{
+	  
+	  Coin = new Item("Coin", Color.valueOf("abcdef")){{
 	    
 	  }};
 	  copperPlate = new Item("Copper plate", Color.valueOf("abcdef")){{

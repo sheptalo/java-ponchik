@@ -49,12 +49,13 @@ public static void load()
         new IOEntry(
           Seq.with(ItemStack.with(
             Items.titanium, 2
+            Items.silicon, 1
             )
           ),
           Seq.with(), 1f),
           new IOEntry(
             Seq.with(ItemStack.with(
-              PonchikItems.coin, 2
+              PonchikItems.Coin, 2
               )),
               Seq.with()), 100f
         ));
