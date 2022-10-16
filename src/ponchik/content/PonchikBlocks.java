@@ -38,7 +38,7 @@ public static void load()
 {
   //factory
   bigSeller = new MultiCrafter("Big seller"){{
-    requirements(Category.production, with(Items.copper, 400, Items.lead, 300, PonchikItems.thoriumPlate, 200));
+    requirements(Category.production, ItemStack.with(Items.copper, 400, Items.lead, 300, PonchikItems.thoriumPlate, 200));
     size = 3;
     health = 800;
     powerCapacity = 0;
