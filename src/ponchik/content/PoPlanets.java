@@ -19,7 +19,7 @@ import mindustry.world.meta.*;
 
 public class PoPlanets{
     public static Planet
-    Voulis
+    Voulis;
 
 
 
