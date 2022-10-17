@@ -24,7 +24,7 @@ public class Ponchik extends Mod{
 
     @Override
     public void loadContent(){
-      PoBlocks.load();
       PoItems.load();
+      PoBlocks.load();
     }
 }
