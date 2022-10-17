@@ -26,7 +26,7 @@ public class PoItems{
 	  thoriumPlate = new Item("thoriumPlate", Color.valueOf("abcdef")){{
 	    
 	  }};
-	  titaniumPlate = new Item("titanium Plate", Color.valueOf("abcdef")){{
+	  titaniumPlate = new Item("titaniumPlate", Color.valueOf("abcdef")){{
 	    
 	  }};
 	}
