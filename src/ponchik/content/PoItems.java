@@ -8,25 +8,25 @@ public class PoItems{
 	coin, copperPlate, leadPlate, mechGun, mechJet, thoriumPlate, titaniumPlate;
 	public static void load(){
 	  
-	  coin = new Item("Coin", Color.valueOf("abcdef")){{
+	  coin = new Item("coin", Color.valueOf("abcdef")){{
 	    
 	  }};
-	  copperPlate = new Item("Copper plate", Color.valueOf("abcdef")){{
+	  copperPlate = new Item("copperPlate", Color.valueOf("abcdef")){{
 	    
 	  }};
-	  leadPlate = new Item("Lead plate", Color.valueOf("abcdef")){{
+	  leadPlate = new Item("leadPlate", Color.valueOf("abcdef")){{
 	    
 	  }};
-	  mechGun = new Item("Mech gun", Color.valueOf("abcdef")){{
+	  mechGun = new Item("mechGun", Color.valueOf("abcdef")){{
 	    
 	  }};
-	  mechJet = new Item("Mech jet", Color.valueOf("abcdef")){{
+	  mechJet = new Item("mechJet", Color.valueOf("abcdef")){{
 	    
 	  }};
-	  thoriumPlate = new Item("Thorium plate", Color.valueOf("abcdef")){{
+	  thoriumPlate = new Item("thoriumPlate", Color.valueOf("abcdef")){{
 	    
 	  }};
-	  titaniumPlate = new Item("Titanium Plate", Color.valueOf("abcdef")){{
+	  titaniumPlate = new Item("titanium Plate", Color.valueOf("abcdef")){{
 	    
 	  }};
 	}

@@ -31,7 +31,7 @@ public static Block
 public static void load()
 {
   //factory
-  bigSeller = new MultiCrafter("Big seller"){{
+  bigSeller = new MultiCrafter("bigSeller"){{
     requirements(Category.production, ItemStack.with(Items.copper, 400, Items.lead, 300, PoItems.thoriumPlate, 200));
     size = 3;
     health = 800;
@@ -54,7 +54,7 @@ public static void load()
 					140f
 			));
 		}}; 
-        copperPress = new GenericCrafter("Copper press"){{
+        copperPress = new GenericCrafter("copperPress"){{
             requirements(Category.crafting, ItemStack.with(Items.copper, 65));
             craftTime = 120f;
             size = 1;
