@@ -14,7 +14,7 @@ import mindustry.maps.planet.*;
 import mindustry.type.*;
 import mindustry.world.*;
 import mindustry.world.meta.*;
-
+import mindustry.content.*;
 
 
 public class PoPlanets{
