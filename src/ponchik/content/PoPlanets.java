@@ -40,7 +40,6 @@ public static void load(){
                 r.waveTeam = Team.crux;
                 r.placeRangeCheck = false;
             };
-            iconColor = Color.valueOf("7b4dfa");
             atmosphereColor = Color.valueOf("3c1b8f");
             atmosphereRadIn = 0.02f;
             atmosphereRadOut = 0.3f;
