@@ -133,7 +133,17 @@ public static void load()
             buildCostMultiplier = 0.7f;
         }};
 //environment
+silf = new Floor("silf");
         silfWall = new StaticWall("silf-wall");
-        rawVilenium = new OreBlock(PoItems.rawVilenium);
+        rawVilenium = new OreBlock("rawVilenium"){{
+          oreDefault = true;
+          	variants = 3;
+			oreThreshold = 25.4F;
+			oreScale = 0.3F;
+			itemDrop = PoItems.vilenium;
+			localizedName = itemDrop.localizedName;
+			mapColor.set(itemDrop.color);
+			useColor = true;
+		}};
  }
 }
