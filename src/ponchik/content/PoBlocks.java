@@ -54,5 +54,18 @@ public static void load()
 					140f
 			));
 		}}; 
+        copperPress = new GenericCrafter("Copper press"){{
+            requirements(Category.crafting, with(Items.copper, 65));
+            craftTime = 120f;
+            size = 1;
+            hasPower = true;
+            hasItems = true;
+            rotate = false;
+            solid = true;
+
+            consumePower(1.5f);
+            consumeItem(Items.titanium);
+             outputItem = new ItemStack(PoItems.copperPlate, 1);
+        }};
  }
 }
