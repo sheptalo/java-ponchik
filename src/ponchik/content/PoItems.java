@@ -5,11 +5,16 @@ import mindustry.type.Item;
 
 public class PoItems{
 	public static Item 
-	coin, copperPlate, leadPlate, mechGun, mechJet, thoriumPlate, titaniumPlate;
+	coin, copperPlate, leadPlate, silver, mechGun, mechJet, thoriumPlate, rawVilenium, titaniumPlate;
 	public static void load(){
-	  
+	  rawVilenium = new Item("rawVilenium", Color.valueOf("abcdef")){{
+		hardness = 3;
+	  }};
 	  coin = new Item("coin", Color.valueOf("abcdef")){{
 	    
+	  }};
+	  silver = new Item("silver", Color.valueOf("abcdef")){{
+
 	  }};
 	  copperPlate = new Item("copperPlate", Color.valueOf("abcdef")){{
 	    
@@ -29,5 +34,6 @@ public class PoItems{
 	  titaniumPlate = new Item("titaniumPlate", Color.valueOf("abcdef")){{
 	    
 	  }};
+
 	}
 } 
