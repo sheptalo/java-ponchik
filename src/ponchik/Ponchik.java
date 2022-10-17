@@ -26,5 +26,6 @@ public class Ponchik extends Mod{
     public void loadContent(){
       PoItems.load();
       PoBlocks.load();
+      PoPlanets.load();
     }
 }
