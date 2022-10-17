@@ -55,7 +55,7 @@ public static void load()
 			));
 		}}; 
         copperPress = new GenericCrafter("Copper press"){{
-            requirements(Category.crafting, with(Items.copper, 65));
+            requirements(Category.crafting, ItemStack.with(Items.copper, 65));
             craftTime = 120f;
             size = 1;
             hasPower = true;
@@ -64,7 +64,7 @@ public static void load()
             solid = true;
 
             consumePower(1.5f);
-            consumeItem(Items.titanium);
+            consumeItem(Items.copper);
              outputItem = new ItemStack(PoItems.copperPlate, 1);
         }};
  }
