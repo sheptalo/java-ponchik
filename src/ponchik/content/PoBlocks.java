@@ -20,9 +20,7 @@ import mindustry.world.blocks.environment.OreBlock;
 import mindustry.world.blocks.production.GenericCrafter;
 import mindustry.world.draw.*;
 import mindustry.world.meta.BuildVisibility;
-import ponchik.world.blocks.crafting.multicraft.IOEntry;
-import ponchik.world.blocks.crafting.multicraft.MultiCrafter;
-import ponchik.world.blocks.crafting.multicraft.Recipe;
+import ponchik.world.blocks.crafting.multicraft.*;
 
 
 public class PoBlocks{
