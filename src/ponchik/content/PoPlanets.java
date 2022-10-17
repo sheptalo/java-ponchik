@@ -1,4 +1,4 @@
-package mindustry.content;
+package ponchik.content;
 
 import arc.func.*;
 import arc.graphics.*;
