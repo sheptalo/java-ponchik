@@ -24,7 +24,7 @@ public class PoPlanets{
 
 
 public static void load(){
-        Voulis = new Planet("voulis", sun, 3f, 2){{
+        Voulis = new Planet("voulis", Planets.serpulo, 3f, 2){{
             generator = new SerpuloPlanetGenerator();
                 meshLoader = () -> new HexMesh(this, 5);
 
