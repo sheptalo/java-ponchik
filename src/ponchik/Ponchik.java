@@ -19,7 +19,7 @@ public void thanks(){
           Time.runTask(10f, () -> {
               BaseDialog dialog = new BaseDialog("thanks for downloading");
               dialog.cont.add("Thanks for downloading it makes me happier").row();
-              dialog.cont.image(Core.atlas.find("example-java-mod-frog")).pad(20f).row();
+              dialog.cont.image(Core.atlas.find("po-icon")).pad(20f).row();
               dialog.cont.button("Ok", dialog::hide).size(100f, 50f);
               dialog.show();
           });
