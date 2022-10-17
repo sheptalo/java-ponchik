@@ -5,10 +5,10 @@ import mindustry.type.Item;
 
 public class PoItems{
 	public static Item 
-	Coin, copperPlate, leadPlate, mechGun, mechJet, thoriumPlate, titaniumPlate;
+	coin, copperPlate, leadPlate, mechGun, mechJet, thoriumPlate, titaniumPlate;
 	public static void load(){
 	  
-	  Coin = new Item("Coin", Color.valueOf("abcdef")){{
+	  coin = new Item("Coin", Color.valueOf("abcdef")){{
 	    
 	  }};
 	  copperPlate = new Item("Copper plate", Color.valueOf("abcdef")){{

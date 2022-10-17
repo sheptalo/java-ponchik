@@ -39,19 +39,20 @@ public static void load()
     craftEffect = Fx.none;
     itemCapacity = 20;
     resolvedRecipes = Seq.with(
-      new Recipe(
-        new IOEntry(
-          Seq.with(ItemStack.with(
-            Items.titanium, 2, 
-            Items.silicon, 1
-            )),
-          Seq.with(), 1f),
-          new IOEntry(
-            Seq.with(ItemStack.with(
-              PoItems.Coin, 2
-              )),
-              Seq.with()), 100f
-        ));
-  }};
+ 			new Recipe(
+					new IOEntry(
+					Seq.with(ItemStack.with(
+							Items.titanium, 1
+				    )),
+					Seq.with(),
+							0.7f),
+					new IOEntry(
+					Seq.with(ItemStack.with(
+					PoItems.coin, 2
+				    )),
+				    Seq.with()),
+					140f
+			));
+		}}; 
  }
 }
