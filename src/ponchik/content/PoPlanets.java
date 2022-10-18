@@ -9,8 +9,7 @@ import mindustry.content.Items;
 import ponchik.content.PoItems;
 
 public class PoPlanets{
-    public static Planet
-    Voulis;
+    public static Planet Voulis;
 
 //TODO my own tech tree? 
 
@@ -38,7 +37,7 @@ public static void load(){
             alwaysUnlocked = true;
             clearSectorOnLose = true;
             defaultCore = PoBlocks.coreSelit;
-            hiddenItems.addAll(PoItems.voItems).removeAll(Items.serpuloItems, PoItems.serpuloItems, erekirItems);
+            hiddenItems.addAll(PoItems.voItems).removeAll(Items.serpuloItems, PoItems.serpuloItems, Items.erekirItems);
         }};
 } 
 } 
