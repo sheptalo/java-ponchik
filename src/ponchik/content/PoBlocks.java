@@ -43,9 +43,9 @@ public static Block
 //energy
 generator, petrolFactory,
 //environment
-silf, stoneSilf, silfWall,
+silf, stoneSilf, silfWall, monu, stoneMonu,
 //ores
-rawVilenium,
+oreVilenium,
 //factory
  bigSeller, seller, copperPress, electroPress, chemikTable, plateSeller,
 //walls
@@ -181,9 +181,12 @@ public static void load()
             buildCostMultiplier = 0.7f;
         }};
 //environment
+
 silf = new Floor("silf");
+stoneMonu = new Floor("stoneMonu");
+monu = new Floor("monu");
         silfWall = new StaticWall("silf-wall");
-        rawVilenium = new OreBlock("rawVilenium"){{
+        oreVilenium = new OreBlock("oreVilenium"){{
           oreDefault = true;
           	variants = 3;
 			oreThreshold = 25.4F;
