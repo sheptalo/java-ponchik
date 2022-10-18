@@ -162,7 +162,15 @@ shootSound = shotgun;
 inaccuracy = 1;
 shots = 1;
 range = 125;
+targetAir = true;
 rotateSpeed = 1;
+itemCapacity = 30;
+            ammo(
+                    Items.copper, new ItemTrailBulletType(6, 4.5f, range, FireColor.fromMap.get(Items.copper)),
+                    PoItems.silver, new ItemTrailBulletType(9, 4f, range, Color.white),
+                    Items.coal, new ItemTrailBulletType(20, 7f, range, Color.black){{
+                        pierceCap = 4;
+                    }},);
 }};
  }
 }
