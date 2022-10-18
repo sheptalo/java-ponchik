@@ -1,4 +1,4 @@
-package ponchik.maps.planet;
+package ponchik.system.generators;
 
 import arc.graphics.Color;
 import arc.math.Angles;
@@ -106,7 +106,7 @@ public class VoulisPlanetGenerator extends PlanetGenerator {
 
         if(noise < 0.16){
             for(PlanetGrid.Ptile other : tile.tiles){
-                Sector osec = sector.planet.getSector(other);
+                var osec = sector.planet.getSector(other);
 
                 //no sectors near start sector!
                 if(
