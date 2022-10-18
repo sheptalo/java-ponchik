@@ -177,7 +177,7 @@ public static void load()
             liquidCapacity = 100f;
         }};
         coreSelit = new CoreBlock("coreSelit"){{
-            requirements(Category.effect,BuildVisibility.editorOnly, ItemStack.with(PoItems.vilenium, 750, Items.lead,500));
+            requirements(Category.effect, ItemStack.with(PoItems.vilenium, 750, Items.lead,500));
             health = 1500;
             itemCapacity = 4000;
             isFirstTier = true;
