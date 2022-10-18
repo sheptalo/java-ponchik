@@ -3,7 +3,7 @@
   "displayName": "ponchik",
   "author": "[#8738ff[]]sheptalo[[]]",
   "description": "remake ponchik on java",
-  "version": "0.1",
+  "version": "0.11",
   "main": "ponchik.Ponchik",
   "minGameVersion": "137",
   "dependencies": [],

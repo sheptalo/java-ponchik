@@ -6,6 +6,8 @@ import mindustry.type.Item;
 public class PoItems{
 	public static Item 
 	coin, copperPlate, leadPlate, silver, mechGun, mechJet, thoriumPlate, vilenium, titaniumPlate;
+	public static final Seq<Item> serpuloItems = new Seq<>(), voItems = new Seq<>();
+
 	public static void load(){
 	  vilenium = new Item("vilenium", Color.valueOf("abcdef")){{
 		hardness = 3;
@@ -34,6 +36,11 @@ public class PoItems{
 	  titaniumPlate = new Item("titaniumPlate", Color.valueOf("abcdef")){{
 	    
 	  }};
-
+	  vilenium = new Item("vilenium", Color.valueOf("abcdef")){{
+	    
+	  }};
+	  serpuloItems.addAll(
+	    titaniumPlate, thoriumPlate, mechGun, mechJet, leadPlate, copperPlate, silver, coin);
+	    voItems.addAll(vilenium);
 	}
 } 

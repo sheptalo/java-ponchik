@@ -35,7 +35,7 @@ public static void load(){
             atmosphereRadOut = 0.3f;
             startSector = 15;
             alwaysUnlocked = true;
-            hiddenItems.addAll(Items.erekirItems).removeAll(Items.serpuloItems);
+            hiddenItems.addAll(PoItems.voItems).removeAll(Items.serpuloItems, PoItems.serpuloItems, erekirItems);
         }};
 } 
 } 
