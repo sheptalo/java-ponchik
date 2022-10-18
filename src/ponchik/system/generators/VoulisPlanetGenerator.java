@@ -85,42 +85,8 @@ public class VoulisPlanetGenerator extends PlanetGenerator {
         return (Mathf.pow(Simplex.noise3d(seed, 8, 0.5f, 1f/3f, position.x, position.y, position.z), 1.8f) + oceansOffset) / (1.4f + oceansOffset);
     }
 
-    @Override
-    public void generateSector(Sector sector){
 
-        //these always have bases
-        if(sector.id == 255 || sector.id == 0){
-            sector.generateEnemyBase = true;
-            return;
-        }
 
-        PlanetGrid.Ptile tile = sector.tile;
-
-        boolean any = false;
-        float poles = Math.abs(tile.v.y);
-        float noise = Noise.snoise3(tile.v.x, tile.v.y, tile.v.z, 0.001f, 0.58f);
-
-        if(noise + poles/7.1 > 0.12 && poles > 0.23){
-            any = true;
-        }
-
-        if(noise < 0.16){
-            for(PlanetGrid.Ptile other : tile.tiles){
-                var osec = sector.planet.getSector(other);
-
-                //no sectors near start sector!
-                if(
-                        osec.id == sector.planet.startSector || //near starting sector
-                                osec.generateEnemyBase && poles < 0.85 || //near other base
-                                (sector.preset != null && noise < 0.11) //near preset
-                ){
-                    return;
-                }
-            }
-        }
-
-        sector.generateEnemyBase = any;
-    }
 
     @Override
     public float getHeight(Vec3 position){
