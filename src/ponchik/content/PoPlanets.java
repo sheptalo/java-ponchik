@@ -12,7 +12,7 @@ public class PoPlanets{
     public static Planet
     Voulis;
 
-
+//TODO new planet generator.my own tech tree? 
 
 public static void load(){
         Voulis = new Planet("voulis", Planets.serpulo, 3f, 2){{

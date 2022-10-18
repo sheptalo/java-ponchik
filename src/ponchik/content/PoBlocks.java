@@ -32,13 +32,13 @@ silf, stoneSilf, silfWall,
 rawVilenium,
 //factory
  bigSeller, seller, copperPress, electroPress, chemikTable, plateSeller,
- smallContainer, smallLiqContainer,
+
  //turrets
  lino, pool, scar, asort, bit, light,
  //units
 attackerFab, minerFab, minerRefab, unitBuy,
 //just blocks
-coreSelit;
+ smallContainer, smallLiqContainer,mediumContainer, coreSelit;
 
 public static void load()
 {
@@ -115,6 +115,12 @@ public static void load()
             health = 100;
             itemCapacity = 100;
         }};
+        mediumContainer = new StorageBlock("mediumContainer"){{
+          requirements(Category.effect, ItemStack.with(Items.copper, 75,PoItems.leadPlate,50));
+          size = 2;
+          health = 300;
+          itemCapacity = 300;
+        }};
         smallLiqContainer = new LiquidRouter("smallLiqContainer"){{
             requirements(Category.liquid, ItemStack.with(Items.lead, 80));
             size = 1;
@@ -145,5 +151,18 @@ silf = new Floor("silf");
 			mapColor.set(itemDrop.color);
 			useColor = true;
 		}};
+//turrets
+lino = new ItemTurret("lino"){{
+  requirements(Category.turret, ItemStack.with(Items.lead, 30, PoItems.copperPlate,20))
+  size = 1;
+health = 200;
+reloadTime = 500;
+ammoUseEffect = casing1;
+shootSound = shotgun;
+inaccuracy = 1;
+shots = 1;
+range = 125;
+rotateSpeed = 1;
+}};
  }
 }
