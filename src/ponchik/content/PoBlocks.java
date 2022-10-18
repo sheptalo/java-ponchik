@@ -166,9 +166,19 @@ targetAir = true;
 rotateSpeed = 1;
 itemCapacity = 30;
             ammo(
-                    Items.copper, new ItemTrailBulletType(6, 4.5f, range, FireColor.fromMap.get(Items.copper)),
-                    PoItems.silver, new ItemTrailBulletType(9, 4f, range, Color.white),
-                    Items.coal, new ItemTrailBulletType(20, 7f, range, Color.black){{
+                    Items.copper, new BulletType(6, 4.5f, range, FireColor.fromMap.get(Items.copper)),
+                    PoItems.silver, new BulletType(9, 4f, range, Color.white){{
+                                          lifetime = 60f;
+                    ammoMultiplier = 5f;
+                    shootEffect = Fx.shootSmall;
+                    reloadMultiplier = 0.5f;
+                    width = 6f;
+                    height = 8f;
+                    hitEffect = Fx.flakExplosion;
+                    splashDamage = 30f * 1.5f;
+                    splashDamageRadius = 25f;
+                    }}, 
+                    Items.coal, new BulletType(20, 7f, range, Color.black){{
                         pierceCap = 4;
                     }}
                     );
