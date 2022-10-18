@@ -153,7 +153,7 @@ silf = new Floor("silf");
 		}};
 //turrets
 lino = new ItemTurret("lino"){{
-  requirements(Category.turret, ItemStack.with(Items.lead, 30, PoItems.copperPlate,20))
+  requirements(Category.turret, ItemStack.with(Items.lead, 30, PoItems.copperPlate,20));
   size = 1;
 health = 200;
 reloadTime = 500;
@@ -170,7 +170,8 @@ itemCapacity = 30;
                     PoItems.silver, new ItemTrailBulletType(9, 4f, range, Color.white),
                     Items.coal, new ItemTrailBulletType(20, 7f, range, Color.black){{
                         pierceCap = 4;
-                    }},);
+                    }}
+                    );
 }};
  }
 }
