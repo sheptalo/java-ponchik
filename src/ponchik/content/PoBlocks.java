@@ -4,8 +4,6 @@ import arc.graphics.*;
 import arc.math.*;
 import arc.struct.*;
 import mindustry.*;
-import mindustry.content.Fx;
-import mindustry.content.Items;
 import mindustry.entities.*;
 import mindustry.entities.abilities.*;
 import mindustry.entities.bullet.*;
@@ -19,6 +17,7 @@ import mindustry.type.*;
 import mindustry.type.unit.*;
 import mindustry.world.*;
 import mindustry.world.blocks.*;
+import mindustry.content.*;
 import mindustry.world.blocks.campaign.*;
 import mindustry.world.blocks.defense.*;
 import mindustry.world.blocks.defense.turrets.*;
@@ -36,13 +35,13 @@ import mindustry.world.blocks.storage.*;
 import mindustry.world.blocks.units.*;
 import mindustry.world.consumers.*;
 import mindustry.world.draw.*;
-import mindustry.world.meta.BuildVisibility;
+import mindustry.world.meta.*;
 import ponchik.world.blocks.crafting.multicraft.*;
 
 public class PoBlocks{
 public static Block
 //energy
-fuelGenerator,
+generator, petrolFactory,
 //environment
 silf, stoneSilf, silfWall,
 //ores
@@ -55,13 +54,13 @@ silverWall, bigSilverWall,
  lino, pool, scar, asort, bit, light,
  //units
 attackerFab, minerFab, minerRefab, unitBuy,
-//just blocks
+//just PoBlocks
  smallContainer, smallLiqContainer,mediumContainer, coreSelit;
 
 public static void load()
 {
     //energy
-    fuelGenerator = new ConsumeGenerator("fuelGenerator"){{
+    generator = new ConsumeGenerator("generator"){{
         requirements(Category.power, ItemStack.with(Items.copper, 100, PoItems.silver, 50, Items.lead, 100, Items.silicon, 65));
         powerProduction = 20f;
         hasLiquids = true;
@@ -70,10 +69,9 @@ public static void load()
         ambientSound = Sounds.steam;
         generateEffect = Fx.generatespark;
         ambientSoundVolume = 0.03f;
-
         drawer = new DrawMulti(new DrawDefault(), new DrawWarmupRegion(), new DrawLiquidRegion());
 
-        consumeLiquid(explosionPuddleLiquid, explosionPuddleAmount);
+        consumeLiquid(PoLiquids.petrol, 0.1f);
     }};
     //walls
     silverWall = new Wall("silverWall"){{
