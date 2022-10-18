@@ -4,6 +4,8 @@ import arc.graphics.*;
 import arc.math.*;
 import arc.struct.*;
 import mindustry.*;
+import mindustry.content.Fx;
+import mindustry.content.Items;
 import mindustry.entities.*;
 import mindustry.entities.abilities.*;
 import mindustry.entities.bullet.*;
@@ -36,17 +38,19 @@ import mindustry.world.consumers.*;
 import mindustry.world.draw.*;
 import mindustry.world.meta.BuildVisibility;
 import ponchik.world.blocks.crafting.multicraft.*;
-import mindustry.world.blocks.environment.*;
 
 public class PoBlocks{
 public static Block
+//energy
+fuelGenerator,
 //environment
 silf, stoneSilf, silfWall,
 //ores
 rawVilenium,
 //factory
  bigSeller, seller, copperPress, electroPress, chemikTable, plateSeller,
-
+//walls
+silverWall, bigSilverWall,
  //turrets
  lino, pool, scar, asort, bit, light,
  //units
@@ -56,6 +60,32 @@ attackerFab, minerFab, minerRefab, unitBuy,
 
 public static void load()
 {
+    //energy
+    fuelGenerator = new ConsumeGenerator("fuelGenerator"){{
+        requirements(Category.power, ItemStack.with(Items.copper, 100, PoItems.silver, 50, Items.lead, 100, Items.silicon, 65));
+        powerProduction = 20f;
+        hasLiquids = true;
+        hasItems = false;
+        size = 3;
+        ambientSound = Sounds.steam;
+        generateEffect = Fx.generatespark;
+        ambientSoundVolume = 0.03f;
+
+        drawer = new DrawMulti(new DrawDefault(), new DrawWarmupRegion(), new DrawLiquidRegion());
+
+        consumeLiquid(explosionPuddleLiquid, explosionPuddleAmount);
+    }};
+    //walls
+    silverWall = new Wall("silverWall"){{
+        requirements(Category.defense, ItemStack.with(PoItems.silver, 6));
+        health = 80;
+
+    }};
+    bigSilverWall = new Wall("bigSilverWall"){{
+        requirements(Category.defense, ItemStack.with(PoItems.silver, 6));
+        health = 80;
+
+    }};
   //factory
   seller = new MultiCrafter("seller"){{
     requirements(Category.production, ItemStack.with(Items.copper, 200, Items.lead, 150));
@@ -142,7 +172,7 @@ public static void load()
             liquidCapacity = 100f;
         }};
         coreSelit = new CoreBlock("coreSelit"){{
-            requirements(Category.effect, ItemStack.with(Items.copper, 500, Items.lead,500));
+            requirements(Category.effect,BuildVisibility.editorOnly, ItemStack.with(Items.copper, 500, Items.lead,500));
             health = 1500;
             itemCapacity = 4000;
             isFirstTier = true;
@@ -170,29 +200,25 @@ lino = new ItemTurret("lino"){{
   requirements(Category.turret, ItemStack.with(Items.lead, 30, PoItems.copperPlate,20));
   size = 1;
 health = 200;
-reloadTime = 500;
-ammoUseEffect = casing1;
-shootSound = shotgun;
+reload = 500;
+shootSound = Sounds.shotgun;
 inaccuracy = 1;
-shots = 1;
+
 range = 125;
 targetAir = true;
 rotateSpeed = 1;
 itemCapacity = 30;
             ammo(
-                    Items.copper, new BulletType(6, 4.5f, range, FireColor.fromMap.get(Items.copper)),
-                    PoItems.silver, new BulletType(9, 4f, range, Color.white){{
+                    PoItems.silver, new BasicBulletType(9, 4f){{
                                           lifetime = 60f;
-                    ammoMultiplier = 5f;
+                    ammoMultiplier = 5;
                     shootEffect = Fx.shootSmall;
-                    reloadMultiplier = 0.5f;
                     width = 6f;
                     height = 8f;
-                    hitEffect = Fx.flakExplosion;
                     splashDamage = 30f * 1.5f;
                     splashDamageRadius = 25f;
                     }}, 
-                    Items.coal, new BulletType(20, 7f, range, Color.black){{
+                    Items.coal, new BasicBulletType(20, 7f){{
                         pierceCap = 4;
                     }}
                     );
