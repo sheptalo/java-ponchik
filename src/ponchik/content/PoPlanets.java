@@ -3,7 +3,6 @@ package ponchik.content;
 import arc.graphics.*;
 import mindustry.game.*;
 import mindustry.graphics.g3d.*;
-import mindustry.maps.planet.*;
 import mindustry.type.*;
 import ponchik.system.generators.VoulisPlanetGenerator;
 import mindustry.content.*;

@@ -1,7 +1,6 @@
 package ponchik.content;
 
-import arc.graphics.*;
-import arc.math.*;
+
 import arc.struct.*;
 import mindustry.*;
 import mindustry.entities.*;
@@ -12,11 +11,9 @@ import mindustry.entities.part.DrawPart.*;
 import mindustry.entities.part.*;
 import mindustry.entities.pattern.*;
 import mindustry.gen.*;
-import mindustry.graphics.*;
 import mindustry.type.*;
 import mindustry.type.unit.*;
 import mindustry.world.*;
-import mindustry.world.blocks.*;
 import mindustry.content.*;
 import mindustry.world.blocks.campaign.*;
 import mindustry.world.blocks.defense.*;
@@ -43,7 +40,7 @@ public static Block
 //energy
 generator, petrolFactory,
 //environment
-silf, stoneSilf, silfWall, monu, stoneMonu,
+silf, stoneSilf, silfWall, monu, stoneMonu, petrolLiquid,
 //ores
 oreVilenium,
 //factory
@@ -181,7 +178,18 @@ public static void load()
             buildCostMultiplier = 0.7f;
         }};
 //environment
-
+petrolLiquid = new Floor("petrolLiquid"){{
+    speedMultiplier = 0.5f;
+    variants = 0;
+    liquidDrop = PoLiquids.petrol;
+    liquidMultiplier = 1.5f;
+    isLiquid = true;
+    status = StatusEffects.wet;
+    statusDuration = 120f;
+    drownTime = 140f;
+    albedo = 0.9f;
+    emitLight = false;
+}};
 silf = new Floor("silf");
 stoneMonu = new Floor("stoneMonu");
 monu = new Floor("monu");
