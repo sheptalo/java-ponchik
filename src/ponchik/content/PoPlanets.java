@@ -6,7 +6,7 @@ import mindustry.graphics.g3d.*;
 import mindustry.maps.planet.*;
 import mindustry.type.*;
 import mindustry.content.*;
-
+import ponchik.maps.planet.*;
 
 public class PoPlanets{
     public static Planet
@@ -15,8 +15,8 @@ public class PoPlanets{
 //TODO new planet generator.my own tech tree? 
 
 public static void load(){
-        Voulis = new Planet("voulis", Planets.serpulo, 3f, 2){{
-            generator = new SerpuloPlanetGenerator();
+        Voulis = new Planet("voulis", Planets.sun, 3f, 2){{
+            generator = new VoulisPlanetGenerator();
                 meshLoader = () -> new HexMesh(this, 5);
 
             launchCapacityMultiplier = 0.5f;
