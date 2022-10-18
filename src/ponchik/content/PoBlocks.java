@@ -44,7 +44,7 @@ silf, stoneSilf, silfWall, monu, stoneMonu, petrolLiquid,
 //ores
 oreVilenium,
 //factory
- bigSeller, seller, copperPress, electroPress, chemikTable, plateSeller,
+ bigSeller, seller, copperPress, electroPress, chemikTable, plateSeller, petrolCrafter,
 //walls
 silverWall, bigSilverWall,
  //turrets
@@ -73,15 +73,24 @@ public static void load()
     //walls
     silverWall = new Wall("silverWall"){{
         requirements(Category.defense, ItemStack.with(PoItems.silver, 6));
-        health = 80;
+        health = 120;
 
     }};
     bigSilverWall = new Wall("bigSilverWall"){{
-        requirements(Category.defense, ItemStack.with(PoItems.silver, 6));
-        health = 80;
+        requirements(Category.defense, ItemStack.with(PoItems.silver, 24));
+        health = 480;
 
     }};
   //factory
+  petrolCrafter = new GenericCrafter("petrolCrafter"){{
+    requirements(Category.production, ItemStack.with(Items.lead, 50));
+    size = 2;
+    health = 500;
+    liquidCapacity = 10f;
+    craftTime = 180f;
+    outputLiquid = new LiquidStack(PoLiquids.petrol, 0.1f);
+    consumeLiquid(Liquids.oil, 0.1f);
+  }};
   seller = new MultiCrafter("seller"){{
     requirements(Category.production, ItemStack.with(Items.copper, 200, Items.lead, 150));
     size = 2;
@@ -142,6 +151,7 @@ public static void load()
         chemikTable = new GenericCrafter("chemicTable"){{
             requirements(Category.production, ItemStack.with(Items.copper, 200, Items.silicon, 250));
             health = 500;
+            size = 3;
             itemCapacity = 20;
             craftTime = 180f;
             outputItem = new ItemStack(PoItems.silver, 1);
