@@ -35,6 +35,8 @@ public static void load(){
             atmosphereRadOut = 0.3f;
             startSector = 15;
             alwaysUnlocked = true;
+            clearSectorOnLose = true;
+            defaultCore = PoBlocks.coreSelit;
             hiddenItems.addAll(PoItems.voItems).removeAll(Items.serpuloItems, PoItems.serpuloItems, erekirItems);
         }};
 } 
