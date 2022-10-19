@@ -269,9 +269,11 @@ public static void load()
 //environment
 silfVent = new SteamVent("silfVent"){{
     attributes.set(Attribute.steam, 1f);
+    parent = blendGroup = PoBlocks.silf;
 }};
     monuVent = new SteamVent("monuVent"){{
         attributes.set(Attribute.steam, 1f);
+parent = blendGroup = PoBlocks.monu;
 }};
 petrolLiquid = new Floor("petrolLiquid"){{
     speedMultiplier = 0.5f;
