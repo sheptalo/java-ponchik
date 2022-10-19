@@ -5,8 +5,8 @@ import mindustry.game.*;
 import mindustry.graphics.g3d.*;
 import mindustry.type.*;
 import ponchik.system.generators.VoulisPlanetGenerator;
-import mindustry.content.Items;
 import ponchik.content.PoItems;
+import mindustry.content.*;
 
 public class PoPlanets{
     public static Planet Voulis;
@@ -37,7 +37,7 @@ public static void load(){
             alwaysUnlocked = true;
             clearSectorOnLose = true;
             defaultCore = PoBlocks.coreSelit;
-            hiddenItems.addAll(PoItems.voItems).removeAll(Items.serpuloItems, PoItems.serpuloItems, Items.erekirItems);
+            hiddenItems.addAll(PoItems.voItems).removeAll(PoItems.serpuloItems);
         }};
 } 
 } 
