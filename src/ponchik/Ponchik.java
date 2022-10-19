@@ -29,6 +29,7 @@ public void thanks(){
       PoItems.load();
       PoLiquids.load();
       PoBlocks.load();
+      PoTechTree.load();
       PoPlanets.load();
     }
 }

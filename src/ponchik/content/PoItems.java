@@ -6,7 +6,7 @@ import mindustry.type.*;
 
 public class PoItems{
 	public static Item 
-	coin, copperPlate, leadPlate, silver, mechGun, mechJet, thoriumPlate, vilenium, olovo, titaniumPlate;
+	coin, copperPlate, leadPlate, silver, thoriumPlate, vilenium, olovo, titaniumPlate;
 	
 	public static final Seq<Item> serpuloItems = new Seq<>(), voItems = new Seq<>();
 
@@ -23,12 +23,10 @@ public class PoItems{
 	  leadPlate = new Item("leadPlate", Color.valueOf("abcdef"));
 	  thoriumPlate = new Item("thoriumPlate", Color.valueOf("abcdef"));
 	  titaniumPlate = new Item("titaniumPlate", Color.valueOf("abcdef"));
-	  vilenium = new Item("vilenium", Color.valueOf("abcdef")){{
-	    
-	  }};
+
 	  
 	  serpuloItems.addAll(
-	    titaniumPlate, thoriumPlate, mechGun, mechJet, leadPlate, copperPlate, coin);
+	    titaniumPlate, thoriumPlate, leadPlate, copperPlate, coin);
 	    
 	    voItems.addAll(vilenium, olovo, silver);
 	}
