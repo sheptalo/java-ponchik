@@ -17,7 +17,7 @@ import ponchik.content.PoBlocks;
 import static mindustry.Vars.*;
 
 public class VoulisPlanetGenerator extends PlanetGenerator {
-    Color c1 = Color.valueOf("5057a6"), c2 = Color.valueOf("272766"), out = new Color();
+    Color c1 = Color.valueOf("451F95"), c2 = Color.valueOf("8468BF"), out = new Color();
 
     Block[][] arr = {
     {PoBlocks.stoneSilf, PoBlocks.silf, PoBlocks.stoneMonu, PoBlocks.petrolLiquid, PoBlocks.monu}

@@ -9,11 +9,8 @@ import mindustry.content.*;
 
 public class PoPlanets{
     public static Planet Voulis;
-
-//TODO my own tech tree? 
-
 public static void load(){
-        Voulis = new Planet("voulis", Planets.sun, 3f, 2){{
+        Voulis = new Planet("voulis", Planets.sun, 4f, 2){{
             generator = new VoulisPlanetGenerator();
                 meshLoader = () -> new HexMesh(this, 5);
 
@@ -29,7 +26,7 @@ public static void load(){
                 r.waveTeam = Team.crux;
                 r.placeRangeCheck = false;
             };
-            atmosphereColor = Color.valueOf("3c1b8f");
+            atmosphereColor = Color.valueOf("696276");
             atmosphereRadIn = 0.02f;
             atmosphereRadOut = 0.3f;
             startSector = 15;
@@ -37,6 +34,8 @@ public static void load(){
             clearSectorOnLose = true;
             defaultCore = PoBlocks.coreSelit;
             hiddenItems.addAll(PoItems.voItems).removeAll(PoItems.serpuloItems);
+            unlockedOnLand.add(PoBlocks.coreSelit);
         }};
+
 } 
 } 

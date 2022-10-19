@@ -40,20 +40,20 @@ public static Block
 //energy
 generator, petrolFactory,
 //environment
-silf, stoneSilf, silfWall, monu, stoneMonu, petrolLiquid,
+silf, stoneSilf, silfWall, monu, stoneMonu, petrolLiquid, silfVent, monuVent,
 //ores
 oreVilenium, oreOlovo,
 //factory
- bigSeller, seller, copperPress, electroPress, chemikTable, plateSeller, petrolCrafter, plasma, bigplasma,
+ bigSeller, seller, copperPress, electroPress, chromeextractor, plateSeller, petrolCrafter, plasma, bigplasma,
 //walls
-silverWall, bigSilverWall,
+chromeWall, bigchromeWall, vileniumWall,bigvileniumWall,
  //turrets
  lino, pool, scar, asort, bit, light,
  //units
 attackerFab, minerFab, minerRefab, unitBuy,
 //just PoBlocks
  smallContainer,vileniumrouter, smallLiqContainer,mediumContainer,mediumLiqContainer,vileniumConveyor,
- silverConveyor,vileniumjunction,vileniumBridge, coreSelit;
+ chromeConveyor,vileniumjunction,vileniumBridge, coreSelit;
 
 public static void load()
 {
@@ -71,11 +71,11 @@ public static void load()
         researchCost = ItemStack.with(PoItems.vilenium, 5);
     
     }};
-    silverConveyor = new Conveyor("silverConveyor"){{
-        requirements(Category.distribution, ItemStack.with(PoItems.silver, 1,PoItems.vilenium, 1 ));
+    chromeConveyor = new Conveyor("chromeConveyor"){{
+        requirements(Category.distribution, ItemStack.with(PoItems.chrome, 1,PoItems.vilenium, 1 ));
         health = 100;
         speed = 0.15f;
-        researchCost = ItemStack.with(PoItems.silver, 500,PoItems.vilenium, 1000);
+        researchCost = ItemStack.with(PoItems.chrome, 500,PoItems.vilenium, 1000);
     }};
     vileniumjunction = new Junction("vileniumjunction"){{
         requirements(Category.distribution, ItemStack.with(PoItems.vilenium, 5));
@@ -95,7 +95,7 @@ public static void load()
     }};
     //energy
     generator = new ConsumeGenerator("generator"){{
-        requirements(Category.power, ItemStack.with(Items.copper, 100, PoItems.silver, 50, Items.lead, 100, Items.silicon, 65));
+        requirements(Category.power, ItemStack.with(PoItems.olovo, 100, PoItems.vilenium, 125));
         powerProduction = 20f;
         hasLiquids = true;
         hasItems = false;
@@ -105,18 +105,28 @@ public static void load()
         ambientSoundVolume = 0.03f;
         drawer = new DrawMulti(new DrawDefault(), new DrawWarmupRegion(), new DrawLiquidRegion());
 
-        consumeLiquid(PoLiquids.petrol, 0.1f);
+        consumeLiquid(PoLiquids.suro, 0.1f);
     }};
     //walls
-    silverWall = new Wall("silverWall"){{
-        requirements(Category.defense, ItemStack.with(PoItems.silver, 6));
-        health = 500;
-
+    vileniumWall = new Wall("vileniumWall"){{
+        requirements(Category.defense, ItemStack.with(PoItems.vilenium,8));
+        health = 420;
+        researchCost = ItemStack.with(PoItems.vilenium, 200);
     }};
-    bigSilverWall = new Wall("bigSilverWall"){{
-        requirements(Category.defense, ItemStack.with(PoItems.silver, 24));
-        health = 2000;
-
+    bigvileniumWall = new Wall("bigvileniumWall"){{
+        requirements(Category.defense, ItemStack.with(PoItems.vilenium,32));
+        health = 1680;
+        researchCost = ItemStack.with(PoItems.vilenium, 700);
+    }};
+    chromeWall = new Wall("chromeWall"){{
+        requirements(Category.defense, ItemStack.with(PoItems.chrome, 6));
+        health = 720;
+        researchCost = ItemStack.with(PoItems.chrome, 200);
+    }};
+    bigchromeWall = new Wall("bigchromeWall"){{
+        requirements(Category.defense, ItemStack.with(PoItems.chrome, 24));
+        health = 2880;
+        researchCost = ItemStack.with(PoItems.chrome, 700);
 
     }};
   //factory
@@ -186,39 +196,33 @@ public static void load()
 					40f
 			));
 		}}; 
-        chemikTable = new GenericCrafter("chemicTable"){{
-            requirements(Category.production, ItemStack.with(Items.copper, 200, Items.silicon, 250));
-            health = 500;
-            size = 3;
-            itemCapacity = 20;
-            craftTime = 180f;
-            outputItem = new ItemStack(PoItems.silver, 1);
-            consumeItems(ItemStack.with(Items.graphite, 5, Items.silicon, 10));
-        }};
-// category effect
         smallContainer = new StorageBlock("smallContainer"){{
-            requirements(Category.effect, ItemStack.with(PoItems.olovo, 50));
+            requirements(Category.effect, ItemStack.with(PoItems.olovo, 100));
             size = 1;
             health = 100;
             itemCapacity = 100;
+            researchCost = ItemStack.with(PoItems.olovo, 300);
         }};
         mediumContainer = new StorageBlock("mediumContainer"){{
-          requirements(Category.effect, ItemStack.with(PoItems.olovo, 100));
+          requirements(Category.effect, ItemStack.with(PoItems.olovo, 200, PoItems.vilenium, 100));
           size = 2;
           health = 300;
           itemCapacity = 300;
+          researchCost = ItemStack.with(PoItems.vilenium, 700, PoItems.olovo, 900);
         }};
         smallLiqContainer = new LiquidRouter("smallLiqContainer"){{
-            requirements(Category.liquid, ItemStack.with(PoItems.olovo, 50));
+            requirements(Category.liquid, ItemStack.with(PoItems.olovo, 100));
             size = 1;
             health = 100;
             liquidCapacity = 10f;
+            researchCost = ItemStack.with(PoItems.olovo, 300);
         }};
         mediumLiqContainer = new LiquidRouter("mediumLiqContainer"){{
-            requirements(Category.liquid, ItemStack.with(PoItems.vilenium, 100));
+            requirements(Category.liquid, ItemStack.with(PoItems.vilenium, 100,PoItems.olovo, 200));
             size = 2;
-            health = 200;
+            health = 300;
             liquidCapacity = 50f;
+            researchCost = ItemStack.with(PoItems.vilenium, 700, PoItems.olovo, 900);
         }};
         coreSelit = new CoreBlock("coreSelit"){{
             requirements(Category.effect, ItemStack.with(PoItems.vilenium, 750, PoItems.olovo,500));
@@ -241,15 +245,36 @@ public static void load()
             range = 5;
         }};
         bigplasma = new BeamDrill("bigplasma"){{
-            requirements(Category.production, ItemStack.with(PoItems.vilenium, 150, PoItems.silver, 200));
+            requirements(Category.production, ItemStack.with(PoItems.vilenium, 150, PoItems.chrome, 200, PoItems.olovo, 100));
             consumePower(0.5f);
 
             drillTime = 100f;
             tier = 5;
             size = 3;
             range = 5;
+            
+        }};
+        chromeextractor = new AttributeCrafter("chromeextractor"){{
+            requirements(Category.production, ItemStack.with(PoItems.vilenium, 80));
+            attribute = Attribute.steam;
+            displayEfficiency = false;
+            craftEffect = Fx.turbinegenerate;
+            craftTime = 120f;
+            size = 3;
+            ambientSound = Sounds.hum;
+            ambientSoundVolume = 0.06f;
+            outputItems = ItemStack.with(PoItems.chrome, 1);
+            consumePower(0.5f);
         }};
 //environment
+silfVent = new SteamVent("silfVent"){{
+    parent = blendGroup = silf;
+    attributes.set(Attribute.steam, 1f);
+}};
+    monuVent = new SteamVent("monuVent"){{
+        parent = blendGroup = monu;
+        attributes.set(Attribute.steam, 1f);
+}};
 petrolLiquid = new Floor("petrolLiquid"){{
     speedMultiplier = 0.5f;
     variants = 0;
@@ -289,7 +314,7 @@ monu = new Floor("monu");
         }};
 //turrets
 lino = new ItemTurret("lino"){{
-  requirements(Category.turret, ItemStack.with(Items.lead, 30, PoItems.copperPlate,20));
+  requirements(Category.turret, ItemStack.with(PoItems.olovo, 100, PoItems.vilenium, 75));
   size = 1;
 health = 200;
 reload = 500;
@@ -300,8 +325,9 @@ range = 125;
 targetAir = true;
 rotateSpeed = 1;
 itemCapacity = 30;
+researchCost = ItemStack.with(PoItems.olovo, 200, PoItems.vilenium,150);
             ammo(
-                    Items.copper, new BasicBulletType(9, 4f){{
+                    PoItems.vilenium, new BasicBulletType(9, 4f){{
                     lifetime = 60f;
                     ammoMultiplier = 5;
                     shootEffect = Fx.shootSmall;
@@ -309,9 +335,6 @@ itemCapacity = 30;
                     height = 8f;
                     splashDamage = 30f * 1.5f;
                     splashDamageRadius = 25f;
-                    }}, 
-                    Items.coal, new BasicBulletType(20, 7f){{
-                        pierceCap = 4;
                     }}
                     );
 }};
