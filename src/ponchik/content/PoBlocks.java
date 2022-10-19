@@ -52,10 +52,41 @@ silverWall, bigSilverWall,
  //units
 attackerFab, minerFab, minerRefab, unitBuy,
 //just PoBlocks
- smallContainer, smallLiqContainer,mediumContainer,mediumLiqContainer, coreSelit;
+ smallContainer, smallLiqContainer,mediumContainer,mediumLiqContainer,vileniumConveyor,silverConveyor,vileniumjunction,vileniumBridge, coreSelit;
 
 public static void load()
 {
+    vileniumConveyor = new Conveyor("vileniumConveyor"){{
+        requirements(Category.distribution, ItemStack.with(PoItems.vilenium, 2));
+        health = 50;
+        speed = 0.08f;
+        displayedSpeed = 4.2f;
+        buildCostMultiplier = 2f;
+        researchCost = ItemStack.with(PoItems.vilenium, 5);
+    
+    }};
+    silverConveyor = new Conveyor("silverConveyor"){{
+        requirements(Category.distribution, ItemStack.with(PoItems.silver, 1,PoItems.vilenium, 1 ));
+        health = 100;
+        speed = 0.15f;
+        researchCost = ItemStack.with(PoItems.silver, 500,PoItems.vilenium, 1000);
+    }};
+    vileniumjunction = new Junction("vileniumjunction"){{
+        requirements(Category.distribution, ItemStack.with(PoItems.vilenium, 5));
+        speed = 26;
+        capacity = 6;
+        health = 40;
+        buildCostMultiplier = 6f;
+        researchCost = ItemStack.with(PoItems.vilenium, 20);
+    }};
+    vileniumBridge = new BufferedItemBridge("vileniumBridge"){{
+        requirements(Category.distribution, ItemStack.with(PoItems.vilenium, 6));
+        fadeIn = moveArrows = false;
+        range = 4;
+        speed = 74f;
+        arrowSpacing = 6f;
+        bufferCapacity = 10;
+    }};
     //energy
     generator = new ConsumeGenerator("generator"){{
         requirements(Category.power, ItemStack.with(Items.copper, 100, PoItems.silver, 50, Items.lead, 100, Items.silicon, 65));
