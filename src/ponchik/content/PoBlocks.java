@@ -268,11 +268,9 @@ public static void load()
         }};
 //environment
 silfVent = new SteamVent("silfVent"){{
-    parent = blendGroup = silf;
     attributes.set(Attribute.steam, 1f);
 }};
     monuVent = new SteamVent("monuVent"){{
-        parent = blendGroup = monu;
         attributes.set(Attribute.steam, 1f);
 }};
 petrolLiquid = new Floor("petrolLiquid"){{
