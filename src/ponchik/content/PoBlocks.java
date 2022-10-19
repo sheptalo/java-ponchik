@@ -301,7 +301,7 @@ monu = new Floor("monu");
 		}};
         oreOlovo = new OreBlock("oreOlovo"){{
             oreDefault = true;
-            variants = 3;
+            variants = 2;
           oreThreshold = 25.4F;
           oreScale = 0.3F;
           wallOre = true;
