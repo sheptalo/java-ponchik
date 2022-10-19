@@ -24,7 +24,7 @@ public class VoulisPlanetGenerator extends PlanetGenerator {
     };
 
     {
-        baseSeed = 1;
+        baseSeed = 2;
     }
 
     @Override

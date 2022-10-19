@@ -1,8 +1,8 @@
 package ponchik.content;
 
 
+import arc.graphics.Color;
 import arc.struct.*;
-import mindustry.*;
 import mindustry.entities.*;
 import mindustry.entities.abilities.*;
 import mindustry.entities.bullet.*;
@@ -34,7 +34,7 @@ import mindustry.world.consumers.*;
 import mindustry.world.draw.*;
 import mindustry.world.meta.*;
 import ponchik.world.blocks.crafting.multicraft.*;
-
+// wallOre = true;
 public class PoBlocks{
 public static Block
 //energy
@@ -42,9 +42,9 @@ generator, petrolFactory,
 //environment
 silf, stoneSilf, silfWall, monu, stoneMonu, petrolLiquid,
 //ores
-oreVilenium,
+oreVilenium, oreOlovo,
 //factory
- bigSeller, seller, copperPress, electroPress, chemikTable, plateSeller, petrolCrafter,
+ bigSeller, seller, copperPress, electroPress, chemikTable, plateSeller, petrolCrafter, plasma, bigplasma,
 //walls
 silverWall, bigSilverWall,
  //turrets
@@ -52,7 +52,7 @@ silverWall, bigSilverWall,
  //units
 attackerFab, minerFab, minerRefab, unitBuy,
 //just PoBlocks
- smallContainer, smallLiqContainer,mediumContainer, coreSelit;
+ smallContainer, smallLiqContainer,mediumContainer,mediumLiqContainer, coreSelit;
 
 public static void load()
 {
@@ -73,12 +73,13 @@ public static void load()
     //walls
     silverWall = new Wall("silverWall"){{
         requirements(Category.defense, ItemStack.with(PoItems.silver, 6));
-        health = 120;
+        health = 500;
 
     }};
     bigSilverWall = new Wall("bigSilverWall"){{
         requirements(Category.defense, ItemStack.with(PoItems.silver, 24));
-        health = 480;
+        health = 2000;
+
 
     }};
   //factory
@@ -159,25 +160,31 @@ public static void load()
         }};
 // category effect
         smallContainer = new StorageBlock("smallContainer"){{
-            requirements(Category.effect, ItemStack.with(Items.copper, 50, Items.lead, 25));
+            requirements(Category.effect, ItemStack.with(PoItems.olovo, 50));
             size = 1;
             health = 100;
             itemCapacity = 100;
         }};
         mediumContainer = new StorageBlock("mediumContainer"){{
-          requirements(Category.effect, ItemStack.with(Items.copper, 75,PoItems.leadPlate,50));
+          requirements(Category.effect, ItemStack.with(PoItems.olovo, 100));
           size = 2;
           health = 300;
           itemCapacity = 300;
         }};
         smallLiqContainer = new LiquidRouter("smallLiqContainer"){{
-            requirements(Category.liquid, ItemStack.with(Items.lead, 80));
+            requirements(Category.liquid, ItemStack.with(PoItems.olovo, 50));
             size = 1;
             health = 100;
-            liquidCapacity = 100f;
+            liquidCapacity = 10f;
+        }};
+        mediumLiqContainer = new LiquidRouter("mediumLiqContainer"){{
+            requirements(Category.liquid, ItemStack.with(PoItems.vilenium, 100));
+            size = 2;
+            health = 200;
+            liquidCapacity = 50f;
         }};
         coreSelit = new CoreBlock("coreSelit"){{
-            requirements(Category.effect, ItemStack.with(PoItems.vilenium, 750, Items.lead,500));
+            requirements(Category.effect, ItemStack.with(PoItems.vilenium, 750, PoItems.olovo,500));
             health = 1500;
             itemCapacity = 4000;
             isFirstTier = true;
@@ -186,6 +193,24 @@ public static void load()
             unitCapModifier = 5;
             alwaysUnlocked = true;
             buildCostMultiplier = 0.7f;
+        }};
+             plasma = new BeamDrill("plasma"){{
+            requirements(Category.production, ItemStack.with(PoItems.vilenium, 60));
+            consumePower(0.15f);
+
+            drillTime = 160f;
+            tier = 3;
+            size = 2;
+            range = 5;
+        }};
+        bigplasma = new BeamDrill("bigplasma"){{
+            requirements(Category.production, ItemStack.with(PoItems.vilenium, 150, PoItems.silver, 200));
+            consumePower(0.5f);
+
+            drillTime = 100f;
+            tier = 5;
+            size = 3;
+            range = 5;
         }};
 //environment
 petrolLiquid = new Floor("petrolLiquid"){{
@@ -214,6 +239,17 @@ monu = new Floor("monu");
 			mapColor.set(itemDrop.color);
 			useColor = true;
 		}};
+        oreOlovo = new OreBlock("oreOlovo"){{
+            oreDefault = true;
+            variants = 3;
+          oreThreshold = 25.4F;
+          oreScale = 0.3F;
+          wallOre = true;
+          itemDrop = PoItems.olovo;
+          localizedName = itemDrop.localizedName;
+          mapColor.set(itemDrop.color);
+          useColor = true;
+        }};
 //turrets
 lino = new ItemTurret("lino"){{
   requirements(Category.turret, ItemStack.with(Items.lead, 30, PoItems.copperPlate,20));
@@ -228,8 +264,8 @@ targetAir = true;
 rotateSpeed = 1;
 itemCapacity = 30;
             ammo(
-                    PoItems.silver, new BasicBulletType(9, 4f){{
-                                          lifetime = 60f;
+                    Items.copper, new BasicBulletType(9, 4f){{
+                    lifetime = 60f;
                     ammoMultiplier = 5;
                     shootEffect = Fx.shootSmall;
                     width = 6f;
@@ -241,6 +277,35 @@ itemCapacity = 30;
                         pierceCap = 4;
                     }}
                     );
+}};
+asort = new ItemTurret("asort"){{
+    size = 3;
+health = 600;
+reload = 500;
+ammoUseEffect = Fx.casing1;
+shootSound = Sounds.shotgun;
+inaccuracy = 5;
+range = 500;
+rotateSpeed= 2;
+ammo(
+    Items.graphite, new BasicBulletType(5, 100f){{
+        lifetime = 100f;
+        ammoMultiplier = 5;
+        shootEffect = Fx.explosion;
+        width = 9;
+        height = 9;
+        splashDamage = 50f * 2f;
+    }},
+    Items.pyratite, new BasicBulletType(5, 150f){{
+        lifetime = 100f;
+        reloadMultiplier = 0.5f;
+        ammoMultiplier = 3;
+        shootEffect = Fx.explosion;
+        width = 9;
+        height = 9;
+        splashDamage = 50f * 2f;
+    }}
+);
 }};
  }
 }
