@@ -52,10 +52,16 @@ silverWall, bigSilverWall,
  //units
 attackerFab, minerFab, minerRefab, unitBuy,
 //just PoBlocks
- smallContainer, smallLiqContainer,mediumContainer,mediumLiqContainer,vileniumConveyor,silverConveyor,vileniumjunction,vileniumBridge, coreSelit;
+ smallContainer,vileniumrouter, smallLiqContainer,mediumContainer,mediumLiqContainer,vileniumConveyor,
+ silverConveyor,vileniumjunction,vileniumBridge, coreSelit;
 
 public static void load()
 {
+    vileniumrouter = new Router("vileniumrouter"){{
+        requirements(Category.distribution, ItemStack.with(PoItems.vilenium, 3));
+        buildCostMultiplier = 4f;
+        researchCost = ItemStack.with(PoItems.vilenium, 10);
+    }};
     vileniumConveyor = new Conveyor("vileniumConveyor"){{
         requirements(Category.distribution, ItemStack.with(PoItems.vilenium, 2));
         health = 50;

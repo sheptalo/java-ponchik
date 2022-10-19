@@ -5,7 +5,6 @@ import mindustry.game.*;
 import mindustry.graphics.g3d.*;
 import mindustry.type.*;
 import ponchik.system.generators.VoulisPlanetGenerator;
-import ponchik.content.PoItems;
 import mindustry.content.*;
 
 public class PoPlanets{
